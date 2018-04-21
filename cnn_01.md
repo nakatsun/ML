@@ -331,8 +331,6 @@ def main(_):
 
     with tf.Session() as sess :
         sess.run(tf.global_variables_initializer())
-
-        !date
         
         print('エポック数'+'\t'+'正解率(学習データ)%'+'\t'+'正解率(テストデータ)%')
         
@@ -364,8 +362,6 @@ def main(_):
         test_accuracy = accuracy.eval(feed_dict={x: test_image, y_: test_label, keep_prob: 1.0})
         print(('%d'+'\t'+'%3.0f'+'\t'+'%3.0f') % (epoch_step, train_accuracy*100.0, test_accuracy*100.0))
 
-        !date
-
         # 正誤判定
         pred = sess.run(tf.argmax(y_conv, 1), feed_dict={x: test_image, y_: test_label, keep_prob: 1.0})
         test_result(pred, test_label)
@@ -374,7 +370,6 @@ if __name__ == '__main__' :
     main(_)
 ```
 
-    2018年  4月 19日 木曜日 23:43:37 JST
     エポック数	正解率(学習データ)%	正解率(テストデータ)%
     0	 57	 78
     30	 83	100
@@ -389,7 +384,7 @@ if __name__ == '__main__' :
     300	100	100
     330	100	100
     359	100	100
-    2018年  4月 19日 木曜日 23:47:12 JST
+
     No.	正解	推定	判定		正解ラベル	推定クラス
     1 	 SKI 	 SKI 	 OK 		 [ 1.  0.] 	 0
     2 	 SKI 	 SKI 	 OK 		 [ 1.  0.] 	 0
